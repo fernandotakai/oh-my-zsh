@@ -4,16 +4,6 @@
 alias pu='pushd'
 alias po='popd'
 
-alias ss='thin --stats "/thin/stats" start'
-alias sg='ruby script/generate'
-alias sd='ruby script/destroy'
-alias sp='ruby script/plugin'
-alias ssp='ruby script/spec'
-alias rdbm='rake db:migrate'
-alias sc='ruby script/console'
-alias sd='ruby script/server --debugger'
-alias devlog='tail -f log/development.log'
-
 # Basic directory operations
 alias .='pwd'
 alias ...='cd ../..'
@@ -34,20 +24,13 @@ alias l='ls -la'
 alias ll='ls -alr'
 alias sl=ls # often screw this up
 
-alias sgem='sudo gem'
+alias tvamazonas-daemon="ssh -C -l visie mediaspace.redeamazonica.com.br 'less /var/log/mqs/mqs_daemon.log'"
+alias tvamazonas-daemon1="ssh -C -l visie mediaspace.redeamazonica.com.br 'less /var/log/mqs/mqs_daemon.log.1'"
+alias tvamazonas-log='ssh -C -l visie mediaspace.redeamazonica.com.br '\''tail -f /var/log/mqs/mqs.log'\'
+alias tvamazonas-fab="fab -H mediaspace.redeamazonica.com.br:5123 -u visie"
+alias brew='nocorrect brew'
+alias lftp='nocorrect lftp'
 
-# Find ruby file
-alias rfind='find . -name *.rb | xargs grep -n'
-alias afind='ack-grep -il'
-
-# Git and svn mix
-alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
-
-# TextMate
-alias et='mate . &'
-alias ett='mate app config lib db public spec test Rakefile Capfile Todo &'
-alias etp='mate app config lib db public spec test vendor/plugins vendor/gems Rakefile Capfile Todo &'
-alias etts='mate app config lib db public script spec test vendor/plugins vendor/gems Rakefile Capfile Todo &'
-
-# Editor Ruby file in TextMate
-alias mr='mate CHANGELOG app config db lib public script spec test'
+alias create_database="mysqladmin -u root -p create"
+alias drop_database="mysqladmin -u root -p drop"
+alias awk="gawk"
