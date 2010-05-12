@@ -38,3 +38,8 @@ alias md='mkdir -p'
 alias rd=rmdir
 
 alias d='dirs -v'
+
+mkcd() {
+    mkdir -p "$*"
+    cd "$*"
+}
