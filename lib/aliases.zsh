@@ -5,7 +5,6 @@ alias pu='pushd'
 alias po='popd'
 
 # Basic directory operations
-alias .='pwd'
 alias ...='cd ../..'
 alias -- -='cd -'
 
@@ -21,7 +20,7 @@ alias history='fc -l 1'
 # List direcory contents
 alias lsa='ls -lah'
 alias l='ls -la'
-alias ll='ls -alr'
+alias ll='ls -lrth'
 alias sl=ls # often screw this up
 
 alias tvamazonas-daemon="ssh -C -l visie mediaspace.redeamazonica.com.br 'less /var/log/mqs/mqs_daemon.log'"
@@ -34,3 +33,8 @@ alias lftp='nocorrect lftp'
 alias create_database="mysqladmin -u root -p create"
 alias drop_database="mysqladmin -u root -p drop"
 alias awk="gawk"
+alias t="python /Users/takai/Projects/Python/t/t.py --task-dir=/Users/takai/.tasks --list tasks"
+
+alias start_pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop_pg='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias ack="nocorrect ack"
