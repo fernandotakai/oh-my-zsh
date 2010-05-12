@@ -11,18 +11,28 @@ function title {
   fi
 }
 
-function precmd {
-  title zsh "$PWD"
+function count_tabs() {
+ echo $(osascript 2>/dev/null <<EOF 
+tell application "Terminal"
+    tell front window to count tabs
+end tell
+EOF) 
 }
 
-function preexec {
-  emulate -L zsh
-  local -a cmd; cmd=(${(z)1})
-  title $cmd[1]:t "$cmd[2,-1]"
+function precmd() {
+    title "$PWD"
+}
+
+function preexec() {
+    title "$(count_tabs) - $PWD"
 }
 
 function zsh_stats() {
   history | awk '{print $2}' | sort | uniq -c | sort -rn | head
+}
+
+function tvamazonas-exec(){
+  ssh -C -l visie mediaspace.redeamazonica.com.br "$@"
 }
 
 function uninstall_oh_my_zsh() {
