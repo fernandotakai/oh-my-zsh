@@ -11,20 +11,12 @@ function title {
   fi
 }
 
-function count_tabs() {
- echo $(osascript 2>/dev/null <<EOF 
-tell application "Terminal"
-    tell front window to count tabs
-end tell
-EOF) 
-}
-
 function precmd() {
     title "$PWD"
 }
 
 function preexec() {
-    title "$(count_tabs) - $PWD"
+    title "$PWD"
 }
 
 function zsh_stats() {
