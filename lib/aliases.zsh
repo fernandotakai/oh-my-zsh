@@ -36,3 +36,5 @@ alias start_pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 alias stop_pg='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias ack="nocorrect ack"
 alias cpath="pwd|tr -d '\n'|pbcopy"
+alias node='nocorrect node'
+alias npm='nocorrect npm'
